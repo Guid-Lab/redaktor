@@ -1,0 +1,27 @@
+name: Release
+on:
+  push:
+    tags: ['v[0-9]+.[0-9]+.[0-9]+']
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node scripts/validate-skill.mjs && node --test scripts/
+      - name: Check tag matches metadata.version
+        run: |
+          VERSION=${GITHUB_REF_NAME#v}
+          grep -q "version: *\"\?${VERSION}\"\?" SKILL.md || { echo "Tag $GITHUB_REF_NAME nie zgadza się z metadata.version w SKILL.md"; exit 1; }
+      - run: scripts/package.sh dist
+      - name: Release notes from CHANGELOG
+        run: |
+          VERSION=${GITHUB_REF_NAME#v}
+          awk -v v="$VERSION" '$0 ~ "^## \\["v"\\]" {p=1; next} /^## \[/ {p=0} p' CHANGELOG.md > notes.md
+      - run: gh release create "$GITHUB_REF_NAME" dist/* --title "redaktor ${GITHUB_REF_NAME#v}" --notes-file notes.md
+        env:
+          GH_TOKEN: ${{ github.token }}

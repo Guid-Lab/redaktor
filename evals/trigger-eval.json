@@ -1,0 +1,82 @@
+[
+  {
+    "query": "mam maila do klienta z Orange, zaraz go wysyłam, rzuć okiem czy nie ma tam błędów i czy nie brzmi sztucznie:\n\nSzanowni Państwo, w nawiązaniu do rozmowy chciałbym wziąść udział w spotkaniu...",
+    "should_trigger": true
+  },
+  {
+    "query": "zrob korekte pliku docs/oferta-wdrozenie.md, tylko bledy, nie zmieniaj stylu bo szef ma swoj",
+    "should_trigger": true
+  },
+  {
+    "query": "Ten tekst na stronę firmową napisał mi ChatGPT i brzmi jak każdy inny. Odhumanizuj go... znaczy odAI-uj, żeby brzmiał jak napisany przez człowieka, bez „w dzisiejszym świecie” i tych wszystkich „kluczowych”.",
+    "should_trigger": true
+  },
+  {
+    "query": "przetłumaczyłem README z angielskiego na polski deeplem, wygląda jak przekład. popraw żeby czytało się naturalnie, plik README.pl.md",
+    "should_trigger": true
+  },
+  {
+    "query": "czy to jest poprawne po polsku: \"Odnośnie wczorajszego spotkania, w oparciu o ustalenia przesyłam notatkę\"? bo coś mi tu zgrzyta",
+    "should_trigger": true
+  },
+  {
+    "query": "Zrób audyt językowy raportu w ~/Projects/raport-q3/raport.md. Nie zmieniaj tekstu, wypisz uwagi z podziałem na błędy i rzeczy stylistyczne, to idzie do zarządu.",
+    "should_trigger": true
+  },
+  {
+    "query": "mam zarys posta na LinkedIn o naszej migracji na Postgresa (punkty poniżej). napisz z tego tekst w moim stylu, rzeczowo, 300 słów, bez dopisywania rzeczy których nie ma w punktach",
+    "should_trigger": true
+  },
+  {
+    "query": "sprawdź wielkie litery w tym piśmie do urzędu miasta: \"Zwracam się do Pana Prezydenta Miasta Bydgoszczy z prośbą...\" nie wiem czy prezydent wielką czy małą",
+    "should_trigger": true
+  },
+  {
+    "query": "przeczytaj regulamin w pliku regulamin-sklepu.md i popraw interpunkcję, głównie przecinki, ale nie ruszaj treści prawnej",
+    "should_trigger": true
+  },
+  {
+    "query": "w tym tekście jest pełno myślników i cudzysłowów ' \" , uporządkuj typografię wg polskich zasad i przy okazji wyłap literówki",
+    "should_trigger": true
+  },
+  {
+    "query": "proofread this cover letter for a job at Allegro, it's in English: Dear Hiring Manager, I am writing to express my interest...",
+    "should_trigger": false
+  },
+  {
+    "query": "przetłumacz ten opis produktu na angielski, idzie na amazon.de i amazon.co.uk: \"Kubek termiczny ze stali nierdzewnej, pojemność 450 ml...\"",
+    "should_trigger": false
+  },
+  {
+    "query": "popraw komentarze i docstringi w src/auth/session.py, są po polsku z literówkami i w ogóle nie opisują co robią funkcje",
+    "should_trigger": false
+  },
+  {
+    "query": "napisz mi wiersz na 50 urodziny taty, z rymami, coś o wędkowaniu i Mazurach, żartobliwe",
+    "should_trigger": false
+  },
+  {
+    "query": "jaka jest różnica między \"tę\" a \"tą\"? kiedy się używa której formy?",
+    "should_trigger": false
+  },
+  {
+    "query": "napisz od zera ofertę handlową dla hurtowni na wdrożenie naszego systemu WMS, nie mam żadnego szkicu, wymyśl strukturę i treść",
+    "should_trigger": false
+  },
+  {
+    "query": "przejrzyj i18n/pl.json, czy klucze są spójne z en.json i czy nie brakuje tłumaczeń w nowej sekcji checkout",
+    "should_trigger": false
+  },
+  {
+    "query": "zrób code review PR #142, zmiany w walidacji formularza rejestracji, komunikaty błędów są po polsku",
+    "should_trigger": false
+  },
+  {
+    "query": "streść mi ten artykuł z Rzeczpospolitej o reformie ortografii 2026 w 5 punktach",
+    "should_trigger": false
+  },
+  {
+    "query": "popraw gramatykę w tym tekście po niemiecku, idzie do klienta z Monachium: Sehr geehrte Damen und Herren, wir möchten Ihnen...",
+    "should_trigger": false
+  }
+]

@@ -1,0 +1,89 @@
+{
+  "skill_name": "redaktor",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Zrób korektę tego maila do klienta przed wysyłką. Tylko błędy, nie zmieniaj stylu ani treści.",
+      "expected_output": "Tekst gotowy do skopiowania z poprawionymi błędami normy (wziąć, tę firmę, przecinek przed „że”), bez długich myślników, z zachowaną treścią oferty, liczbami i podpisem. Sekcja Zmiany z werdyktami.",
+      "files": [
+        "evals/files/mail-korekta.md"
+      ],
+      "assertions": [
+        "Wynik zawiera „wziąć” zamiast „wziąść”",
+        "Wynik zawiera „tę firmę” zamiast „tą firmę”",
+        "Wynik zawiera „Myślę, że” z przecinkiem",
+        "Wynik nie zawiera znaku „—” (długiego myślnika)",
+        "Liczby 24 października, 12 osób, 24 miesiące, 40 tysięcy rekordów są niezmienione",
+        "Sekcja Zmiany oznacza „wziąść” i brak przecinka jako [BŁĄD], a „tą firmę” jako [BŁĄD] lub [WARIANT] z uzasadnieniem rejestru oficjalnego",
+        "Styl i struktura akapitów maila nie zostały przepisane (tryb korekta, nie redakcja)"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Zrób audyt językowy tego tekstu pod kątem manier AI. Nie przepisuj go, tylko wypisz uwagi z werdyktami.",
+      "expected_output": "Lista uwag z werdyktem dla każdej (tu głównie [STYL]), wskazująca otwarcia typu „W dzisiejszym dynamicznie zmieniającym się świecie”, „Warto zauważyć”, inflację „kluczowy”, przymiotniki-watę (kompleksowy, innowacyjny, synergiczny), kontrast binarny „To nie koszt, to inwestycja”, zamknięcie „Podsumowując”, triady. Tekst nie jest zmieniony.",
+      "files": [
+        "evals/files/tekst-ai-audyt.md"
+      ],
+      "assertions": [
+        "Odpowiedź nie zawiera przepisanej wersji tekstu (tryb audyt)",
+        "Każda uwaga ma dokładnie jeden werdykt [BŁĄD], [WARIANT] lub [STYL]",
+        "Maniery AI (otwarcia, przymiotniki-wata, podsumowując, kontrast binarny) są oznaczone jako [STYL], nie [BŁĄD]",
+        "Wskazano co najmniej: „W dzisiejszym”, „Warto zauważyć”, „kluczow”, „Podsumowując”, „To nie koszt, to inwestycja”",
+        "Audyt mówi o skupisku manier (klastrze), nie twierdzi kategorycznie, że tekst napisało AI",
+        "Nazwa NIS2 i treść merytoryczna nie są kwestionowane"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Zredaguj ten paragraf umowy. Ma być poprawnie i czytelnie, ale to tekst prawniczy, więc nie przerabiaj go na blog.",
+      "expected_output": "Paragraf z zachowaną stroną bierną, identycznie powtarzanymi terminami zdefiniowanymi (Wykonawca, Zamawiający, Oprogramowanie, Wynagrodzenie, Harmonogram, Dokumentacja), hierarchią ust., liczbami 0,2% i 20%. Ewentualne zmiany ograniczone do normy i czytelności; nieostre „niezwłocznie” co najwyżej wskazane jako „zostawiam, sprawdź”.",
+      "files": [
+        "evals/files/umowa-prawniczy.md"
+      ],
+      "assertions": [
+        "Terminy zdefiniowane (Wykonawca, Zamawiający, Oprogramowanie, Wynagrodzenie, Harmonogram, Dokumentacja) nie zostały zastąpione synonimami",
+        "Wartości 0,2% i 20% są niezmienione",
+        "Strona bierna i formy bezosobowe nie zostały masowo zamienione na stronę czynną",
+        "Numeracja ust. 1-5 zachowana",
+        "Nie wprowadzono manier typu „warto”, „kluczowy”, ani potocznych zwrotów",
+        "Odpowiedź odwołuje się do rejestru prawniczego jako powodu ograniczonej ingerencji"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Napisz wpis na bloga z tego zarysu. Nasz głos, bez marketingu, nie dopisuj faktów, których nie ma w zarysie.",
+      "expected_output": "Tekst około 400 słów w 1. osobie liczby mnogiej, z podpisem Zespół IT, liczbami dokładnie jak w zarysie (5 domen, około 180 kont, orientacyjnie 3 razy taniej, 6 tygodni), bez dat i okoliczności spoza zarysu, bez śródtytułów na siłę. Po tekście osobna lista „Dopowiedzenia do akceptacji” z każdym zdaniem, które dodaje twierdzenie spoza zarysu, albo informacja, że takich nie ma.",
+      "files": [
+        "evals/files/zarys-artykul.md"
+      ],
+      "assertions": [
+        "Tekst jest w 1. osobie liczby mnogiej i kończy się podpisem Zespół IT",
+        "Liczby z zarysu są zachowane z tą samą modalnością: „około 180”, „orientacyjnie 3 razy”, bez „nawet” ani „aż”",
+        "Spadek spamu opisany bez wymyślonej liczby",
+        "Po tekście jest sekcja „Dopowiedzenia do akceptacji” (albo wyraźna informacja o jej pustości)",
+        "Brak długich myślników i brak zamknięcia typu „Podsumowując”",
+        "Długość między 300 a 500 słów",
+        "Nie dodano daty migracji ani nazwy nowego serwera, których nie ma w zarysie"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Sprawdź ten tekst i wypisz wszystkie błędy językowe z werdyktami.",
+      "expected_output": "Audyt, który NIE zgłasza jako [BŁĄD] form poprawnych: „tak długo, jak”, „pani dyrektor”, „dwa ostatnie”, „jak najbardziej”, „z góry dziękuję”, „dwoje pracowników”, „45 tys. euro”, zdania od „Ale”. „W pierwszym rzędzie” i „ilość incydentów” najwyżej [STYL] lub [WARIANT] z odwołaniem do PWN. Wynik może być krótki: tekst jest w zasadzie poprawny.",
+      "files": [
+        "evals/files/falszywe-alarmy.md"
+      ],
+      "assertions": [
+        "„tak długo, jak” nie jest oznaczone jako [BŁĄD]",
+        "„pani dyrektor” nie jest oznaczone jako błąd ani nie wymuszono formy „dyrektorka”",
+        "Zdanie zaczynające się od „Ale” nie jest oznaczone jako błąd",
+        "„z góry dziękuję” i „jak najbardziej” nie są oznaczone jako błąd",
+        "„ilość incydentów” ma werdykt najwyżej [WARIANT] lub [STYL], nie [BŁĄD]",
+        "„w pierwszym rzędzie” ma werdykt najwyżej [STYL]",
+        "„dwoje pracowników” i „45 tys. euro” nie są poprawiane",
+        "Odpowiedź odwołuje się do źródła normatywnego (PWN) przynajmniej raz"
+      ]
+    }
+  ]
+}
