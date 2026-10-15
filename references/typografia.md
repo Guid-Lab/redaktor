@@ -38,6 +38,32 @@ nie em-dash. Skanuj końcowy tekst pod `—` i `–` przed oddaniem.
   spacji (80 %). Oba poprawne — NIE flaguj żadnego jako błąd; co najwyżej ujednolić w obrębie tekstu.
 - Spacja nierozdzielająca (NBSP) po jednoliterowych spójnikach i przyimkach: a, i, o,
   u, w, z (żeby nie zostały na końcu wiersza) — wszędzie, też na slajdach i w grafice.
+  To preferencja składu, nie norma: złamanie nigdy nie jest [BŁĄD] (prof. Bańko:
+  „przepisy ortograficzne tego nie zabraniają, ale w składzie unika się"). Rygor zależny
+  od miejsca:
+  - **Tytuły, śródtytuły, nagłówki**: bezwzględnie — jednoliterowy wyraz zawsze przenieś
+    (wiąż NBSP). Dotyczy to też przyimków/spójników WIELOLITEROWYCH (od, do, we, za, na,
+    lub, oraz): w tytułach idą do wiersza razem z wyrazem, z którym się łączą
+    („rozwierszowywanie tytułu", Wolański, PWN).
+  - **Tekst ciągły justowany**: wiąż tylko JEDNOLITEROWE (a, i, o, u, w, z), i to głównie
+    w wierszach dłuższych niż 40 znaków. Wieloliterowych (od, do, we, za, na, że, lub)
+    NIE wiąż — Wolański: „nie ma takiej konieczności w wyrównanym obustronnie tekście
+    głównym", wymóg „utrudniałby łamanie i czyniłby kolumnę nieestetyczną". W wąskich
+    łamach nawet jednoliterowy może zostać (SJP, zasada 204).
+  - **Partykuła „nie" i krótkie zaimki** (mi, ci, go, mu, się): brak typograficznej
+    reguły łamania — to proklityki/enklityki (wymowa, akcent), nie skład. NIE wiąż,
+    chyba że autor wprost chce. Zostawienie na końcu wiersza nie jest błędem.
+  - Wyjątek dla młodszych dzieci / osób z niepełnosprawnością intelektualną: trzymaj
+    CAŁE wyrażenie przyimkowe (też wieloliterowy przyimek) z rzeczownikiem (Wolański).
+  - Dzielenie (przenoszenie) wyrazów robi silnik składu (`hyphens: auto` + język `pl`)
+    wg zasady 204: po sylabach, bez zostawiania/przenoszenia pojedynczej litery. Ręcznie
+    nie dziel. Nie rozdzielaj też: „1945 r.", „XX w.", „100 €", „rozdz. 9", „nr 4".
+  - Techniczna uwaga: NBSP wstawiaj w TREŚCI (U+00A0), nie w CSS — to treść steruje
+    łamaniem w PDF (WeasyPrint/LaTeX); pomijaj kod, URL-e i tokeny. Właściwość
+    `text-justify` jest w WeasyPrincie nieobsługiwana — justuj samym `text-align: justify`.
+  - Źródła: [sieroty — PWN](https://sjp.pwn.pl/poradnia/haslo/sieroty-na-koncu-wiersza;8893.html),
+    [wieloliterowe przyimki — PWN](https://sjp.pwn.pl/poradnia/haslo/Nieprzenoszenie-wieloliterowych-przyimkow;17392.html),
+    [zasada 204 — SJP PWN](https://sjp.pwn.pl/zasady/Inne-uwagi-dotyczace-przenoszenia-wyrazow;629563.html).
 - Liczebniki porządkowe z kropką: „w 3. kwartale", „5. miejsce".
 - Zakresy BEZ spacji: 1939–1945 (półpauza preferowana; dywiz 1939-1945 też
   dopuszczalny wg PWN). BŁĄD = spacje (1939 – 1945) lub „od 1939–1945".
